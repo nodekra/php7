@@ -18,5 +18,8 @@ Use this image to run a container with latest stable of php7. it ships with:
 
     docker pull mehrdadkhah/php7
  
-** Run a complete webserver with all development tools (lemp) **
-you should use [lemp-php7 docker compose](https://github.com/Mehrdad-Dadkhah/lemp-php7) that use this repo.
+ 
+**Run a complete webserver with all development tools (lemp)**
+
+
+you should use [lemp-php7 docker compose](https://github.com/Mehrdad-Dadkhah/lemp-php7)	 that use this repo.
