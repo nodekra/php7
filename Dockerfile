@@ -46,6 +46,16 @@ RUN cd /tmp/ && \
     mv apcu-5.1.3 /usr/src/php/ext/apcu \
     && docker-php-ext-install -j$(nproc) apcu
 
+#install Imagemagick & PHP Imagick ext
+RUN apt-get update && apt-get install -y \
+        libmagickwand-dev --no-install-recommends
+
+RUN pecl install imagick && docker-php-ext-enable imagick
+
+# remove not necessary files
+RUN rm -rf /var/lib/apt/lists/*
+
+
 RUN sed -i -e 's/listen.*/listen = 0.0.0.0:9000/' /usr/local/etc/php-fpm.conf
 
 RUN usermod -u 1000 www-data
