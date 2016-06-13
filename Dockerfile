@@ -52,6 +52,11 @@ RUN apt-get update && apt-get install -y \
 
 RUN pecl install imagick && docker-php-ext-enable imagick
 
+# install git
+RUN apt-get update && apt-get install git git-core -y \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 # remove not necessary files
 RUN rm -rf /var/lib/apt/lists/*
 
