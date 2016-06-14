@@ -57,6 +57,9 @@ RUN apt-get update && apt-get install git git-core -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
+#install xdebugy
+RUN pecl install xdebug && docker-php-ext-enable xdebug
+
 # remove not necessary files
 RUN rm -rf /var/lib/apt/lists/*
 
