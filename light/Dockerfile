@@ -36,6 +36,27 @@ RUN apt-get update && apt-get install -y \
 
 RUN pecl install imagick && docker-php-ext-enable imagick
 
+# install apcu
+RUN pecl install apcu \
+    && docker-php-ext-enable apcu
+
+#install php-redis
+ENV PHPREDIS_VERSION php7
+
+RUN curl -L -o /tmp/redis.tar.gz https://github.com/phpredis/phpredis/archive/$PHPREDIS_VERSION.tar.gz  \
+    && mkdir /tmp/redis \
+    && tar -xf /tmp/redis.tar.gz -C /tmp/redis \
+    && rm /tmp/redis.tar.gz \
+    && ( \
+    cd /tmp/redis/phpredis-$PHPREDIS_VERSION \
+    && phpize \
+        && ./configure \
+    && make -j$(nproc) \
+        && make install \
+    ) \
+    && rm -r /tmp/redis \
+    && docker-php-ext-enable redis
+
 # install git
 RUN apt-get update && apt-get install git git-core -y \
     && apt-get clean \
