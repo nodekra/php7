@@ -59,6 +59,10 @@ RUN apt-get update && apt-get install -y \
 
 RUN pecl install imagick && docker-php-ext-enable imagick
 
+# install mongodb ext
+RUN pecl install mongodb \
+    && docker-php-ext-enable mongodb
+
 # install git
 RUN apt-get update && apt-get install git git-core -y \
     && apt-get clean \
