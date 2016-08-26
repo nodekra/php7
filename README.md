@@ -4,7 +4,7 @@ PHP7 docker image with useful extensions:
 - intl
 - soap
 - mysqli
-- pd0 pdo_mysql pdo_pgsql
+- pdo pdo_mysql pdo_pgsql
 - gd
 - mcrypt
 - iconv
