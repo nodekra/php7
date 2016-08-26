@@ -1,4 +1,6 @@
 # PHP7-FPM
+[![Docker Pulls](https://img.shields.io/docker/pulls/m2sh/php7.svg?maxAge=2592000?style=flat-square)](https://hub.docker.com/r/m2sh/php7/)  
+
 PHP7 docker image with useful extensions: 
 - zip
 - intl
