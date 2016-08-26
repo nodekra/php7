@@ -1,25 +1,22 @@
-# php7
-Docker php7 with critical extensions (redis, gd, apcu, intl, soap, pdo, mbstring, iconv and ... )
+# PHP7-FPM
+PHP7 docker image with useful extensions: 
+- zip
+- intl
+- soap
+- mysqli
+- pd0 pdo_mysql pdo_pgsql
+- gd
+- mcrypt
+- iconv
+- gmp
+- redis
+- apcu
+- xdebug
 
-Use this image to run a container with latest stable of php7. it ships with:
+Tags & Dockerfiles:  
+based on `php:7-fpm` (debian based php image):  
+- `latest` - (`~275MB`) [(Dockerfile)](https://github.com/m2sh/php7/blob/master/Dockerfile)
+- `light`  - (`~275MB`) - [(light/Dockerfile)](https://github.com/m2sh/php7/blob/master/light/Dockerfile)   
 
- - last stable version of Redis extension (official version)
- - Intl extension (official version)
- - Apcu extension ([official build for php7](https://pecl.php.net/package/APCu))
- - Soap
- - PDO (MySQL, PostgreSQL, Sqlite)
- - GD
- - iconv
- - mbstring
-
-
-----------
-##usage
-
-    docker pull mehrdadkhah/php7
- 
- 
-**Run a complete webserver with all development tools (lemp)**
-
-
-you should use [lemp-php7 docker compose](https://github.com/Mehrdad-Dadkhah/lemp-php7)	 that use this repo.
+based on `php:7-fpm-alpine` (alpine based php image):  
+- `alpine` - (`~52MB`) [(alpine/Dockerfile)](https://github.com/m2sh/php7/blob/master/alpine/Dockerfile)
