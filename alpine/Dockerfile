@@ -2,7 +2,8 @@ FROM php:7-fpm-alpine
 
 # install extensions
 # intl, zip, soap
-RUN docker-php-ext-install intl zip soap
+RUN apk add --update --no-cache libintl icu icu-dev libxml2-dev \
+    && docker-php-ext-install intl zip soap
 
 # mysqli, pdo, pdo_mysql, pdo_pgsql
 RUN docker-php-ext-install mysqli pdo pdo_mysql pdo_pgsql
