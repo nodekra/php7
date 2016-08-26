@@ -50,7 +50,7 @@ RUN docker-php-source extract \
     && apk del .phpize-deps-configure \
     && docker-php-source delete
 
-# git
+# git client
 RUN apk add --update --no-cache git
 
 RUN sed -i -e 's/listen.*/listen = 0.0.0.0:9000/' /usr/local/etc/php-fpm.conf
