@@ -18,7 +18,7 @@ RUN apk add --update --no-cache \
     && docker-php-ext-install -j"$(getconf _NPROCESSORS_ONLN)" gd
 
 # gmp
-RUN apk add --update --no-cache gmp \
+RUN apk add --update --no-cache gmp gmp-dev \
     && docker-php-ext-install gmp
 
 # php-redis
