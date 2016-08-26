@@ -40,3 +40,9 @@ RUN docker-php-source extract \
     && docker-php-ext-enable xdebug \
     && apk del .phpize-deps-configure \
     && docker-php-source delete
+
+RUN sed -i -e 's/listen.*/listen = 0.0.0.0:9000/' /usr/local/etc/php-fpm.conf
+
+RUN echo "expose_php = Off" > /usr/local/etc/php/php.ini
+
+CMD ["php-fpm"]
