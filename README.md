@@ -14,6 +14,7 @@ PHP7 docker image with useful extensions:
 - redis
 - apcu
 - xdebug
+- imagick
 
 Tags & Dockerfiles:  
 based on `php:7-fpm` (debian based php image):  
