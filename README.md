@@ -13,7 +13,7 @@ PHP7 docker image with useful extensions:
 - gmp
 - redis
 - apcu
-- xdebug
+- xdebug (available on [`m2sh/php7:alpine-dev`](https://github.com/m2sh/php7/blob/master/alpine/dev/Dockerfile))
 - imagick
 
 Tags & Dockerfiles:  
