@@ -42,6 +42,14 @@ RUN docker-php-source extract \
     && docker-php-source delete
 
 
+# xdebug
+RUN docker-php-source extract \
+    && apk add --no-cache --virtual .phpize-deps-configure $PHPIZE_DEPS \
+    && pecl install xdebug \
+    && docker-php-ext-enable xdebug \
+    && apk del .phpize-deps-configure \
+    && docker-php-source delete
+
 # git client
 RUN apk add --update --no-cache git
 
