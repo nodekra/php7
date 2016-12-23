@@ -6,8 +6,7 @@ RUN apk add --update --no-cache libintl icu icu-dev libxml2-dev \
     && docker-php-ext-install intl zip soap
 
 # mysqli, pdo, pdo_mysql, pdo_pgsql
-RUN apk add --update --no-cache libpq \
-    && docker-php-ext-install mysqli pdo pdo_mysql pdo_pgsql
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 # mcrypt, gd, iconv
 RUN apk add --update --no-cache \
